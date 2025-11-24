@@ -1,0 +1,4 @@
+#!/bin/sh
+echo 0 | sudo tee /sys/class/power_supply/BAT0/charge_start_threshold
+echo 50 | sudo tee /sys/class/power_supply/BAT0/charge_stop_threshold
+brightnessctl s 100% -q

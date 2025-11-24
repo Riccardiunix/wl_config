@@ -1,0 +1,6 @@
+#!/bin/sh
+dd='https://www.dungeondice.it/ricerca?controller=search&s='
+f='https://fantasiastore.it/it/ricerca?controller=search&s='
+dm='https://www.dadiemattoncini.it/cerca?s='
+find=$(jq -rn --arg x "$1" '$x|@uri')
+setsid -f firefox $f$find $dd$find $dm$find > /dev/null 2>&1

@@ -1,0 +1,2 @@
+#!/bin/sh
+peerflix -l -k "$1" -- --start=0 --fs --pause
