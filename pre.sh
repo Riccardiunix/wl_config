@@ -22,7 +22,7 @@ doas ln -sf /bin/doas /usr/local/bin/sudo
 
 doas sed -i 's/COMPRESSGZ=(gzip -c -f -n)/COMPRESSGZ=(pigz-c -f -n)/g ; s/COMPRESSBZ2=(bzip2 -c -f)/COMPRESSBZ2=(pbzip2 -c -f)/g ; s/!ccache/ccache/g ; s/#RUSTFLAGS="-Cforce-frame-pointers=yes"/RUSTFLAGS="-Cforce-frame-pointers=yes -C target-cpu=native -C link-arg=-fuse-ld=mold"/g ; s/LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"/LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold"/g' /etc/makepkg.conf
 
-doas pacman -S river wmenu foot foot-terminfo eza zsh zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting lf btop neovim bat man-db terminus-font ttf-dejavu ttf-hack terminator nemo trash-cli rust sccache base-devel wl-clipboard imv --noconfirm --needed || exit 1
+doas pacman -S river wmenu foot foot-terminfo eza zsh zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting lf btop neovim bat man-db terminus-font ttf-dejavu ttf-hack terminator nemo trash-cli rust sccache base-devel wl-clipboard imv symengine --noconfirm --needed || exit 1
 
 echo 'export ZDOTDIR=$HOME/.config/zsh' | doas tee /etc/zsh/zshenv >/dev/null
 
